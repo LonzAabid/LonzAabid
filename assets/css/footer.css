@@ -1,0 +1,161 @@
+/*  
+    -------- Footer Css----Defered---------
+*/
+/* Sidebar Related Posts  */
+
+.related-posts-sidebar {
+    background-color: inherit;
+}
+.rps-posts {
+    padding: 2px;
+}
+.rps-single {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+    outline: 1px solid var(--light-border);
+}
+.rps-single:hover {
+    position: relative;
+    box-shadow: 4px 3px 4px 0 #d7dfdfdf, -4px -2px 3px 0 #dce4e4e1;
+    transform: translateX(-1rem);
+    outline: none;
+}
+.rps-thumb img {
+    display: block;
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-inline: auto;
+}
+.rps-title {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 0.3rem 0;
+    overflow-wrap: break-word;
+}
+
+.edutheme-footer {
+    background-color: var(--footer-bg-color);
+    position: relative;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    color: var(--footer-text-color);
+}
+
+.sidebar-footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    border-bottom: 1px solid var(--light-border);
+}
+.sidebar-footer-flex .widget-title {
+    font-size: 1rem;
+    color: var(--footer-text-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.sidebar-footer-flex ul {
+    list-style: none;
+}
+.sidebar-footer-flex ul a {
+    color: var(--footer-text-color);
+}
+.sidebar-footer-flex ul a:hover {
+    color: var(--link-hover);
+}
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+.footer-social-links .icons {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    object-fit: fill;
+    transition: all 0.3s ease;
+}
+.footer-social-links .icons:hover {
+    position: relative;
+    transform: scale(1.2);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid var(--light-border);
+    padding: 0.4rem;
+}
+
+#scroll-to-top-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#scroll-to-top-text {
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: 1rem;
+}
+#scroll-to-top-btn {
+    display: inline-block;
+    position: static;
+    margin-right: 1rem;
+}
+
+#scroll-to-top-btn a > svg {
+    width: 30px;
+    height: 30px;
+    margin-top: 0.5rem;
+}
+#scroll-to-top-btn a > svg > #svg-id {
+    stroke: var(--link-color);
+}
+
+#scroll-to-top-btn a > svg:hover #svg-id,
+#scroll-to-top-btn a > svg:focus #svg-id {
+    stroke: var(--link-hover);
+}
+
+@media (min-width: 680px) {
+    #scroll-to-top-div {
+        position: fixed;
+        bottom: 2rem;
+        right: 2.5rem;
+        width: auto;
+        height: auto;
+        transition: display 0.3s ease-in;
+    }
+    #scroll-to-top-btn {
+        position: relative;
+        margin: 0;
+    }
+    #scroll-to-top-btn a > svg {
+        width: 2rem;
+        height: 2rem;
+        transition: transform 0.25s ease-in-out;
+    }
+    #scroll-to-top-btn a > svg:hover {
+        transform: scale(1.2);
+    }
+    #scroll-to-top-text {
+        display: none;
+        padding: 4px 6px;
+    }
+    #scroll-to-top-div:hover #scroll-to-top-text {
+        display: inline-block;
+    }
+} /* Scroll Desktop  */

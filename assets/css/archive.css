@@ -1,0 +1,197 @@
+/*
+        Blog posts grid         
+
+*/
+
+/* grid posts */
+
+.site-posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+    row-gap: 1.7rem;
+    padding: 1.5rem;
+}
+.post-card {
+    background-color: #fff;
+    overflow: hidden;
+    outline: 1px solid var(--light-border);
+    border-radius: 0.4rem;
+}
+.post-card > a {
+    display: block;
+    text-decoration: none;
+}
+
+.card-post-title {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.2;
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+}
+.post-card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: fill;
+    margin-inline: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.post-category {
+    margin: 0 0.5rem 0.5rem 1rem;
+}
+.post-category > a {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+@media (min-width: 680px) {
+    .site-posts {
+        grid-template-columns: repeat(auto-fit, minmax(auto, 300px));
+        justify-content: space-evenly;
+        align-items: space-evenly;
+        column-gap: 1.5rem;
+        row-gap: 3.5rem;
+        background-color: var(--content-bg-color);
+        border-radius: 0.5rem;
+        margin: 1rem;
+        padding: 3rem 1rem;
+    }
+
+    .post-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.2s ease-in;
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 1rem 0 #edeeee, -5px -5px 1rem 0 #edeeee;
+        outline: none;
+    }
+    .post-card:hover {
+        position: relative;
+        transform: scale(1.06);
+        box-shadow: 1rem 1rem 1.5rem 0 #edeeee, -1rem -1rem 1.5rem 0 #edeeee;
+    }
+    .card-post-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        color: var(--text-color);
+        font-family: var(--body-font-family);
+    }
+
+    .post-card img {
+        aspect-ratio: 2 / 1.3;
+    }
+} /* Desktop Blog layout End*/
+
+/* List Post Grid */
+
+.post-list {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--main-bg-color);
+}
+.post-list-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-min);
+    padding-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.post-list-item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: fill;
+    border-radius: 8px;
+    margin-inline: auto;
+}
+
+.title-category-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.post-list-title {
+    font-size: 1.1rem;
+    font-family: var(--body-font-family);
+    line-height: 1.3;
+    font-weight: normal;
+    padding: 1rem;
+}
+.title-category-flex a {
+    text-decoration: none;
+}
+.post-list-category {
+    margin-bottom: 0.3rem;
+}
+
+.post-list-category > a {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-inline: 0.5rem;
+    text-decoration: none;
+}
+
+@media (min-width: 600px) {
+    .post-list {
+        margin: 1rem;
+        padding: 3rem;
+        box-shadow: var(--shadow-min);
+        border-radius: 0.5rem;
+        background-color: var(--content-bg-color);
+    }
+    .post-list-item {
+        display: grid;
+        grid-template-columns: auto 2fr;
+        gap: 2rem;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+    .post-list-title {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin: 1rem 0;
+    }
+    .post-list-item figure {
+        min-width: 300px;
+        min-height: 168px;
+    }
+    .post-list-item img {
+        aspect-ratio: 2 / 1.2;
+    }
+}
+/*    
+                        Blog Pagination  
+        
+        */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem 0.4rem;
+    outline: 1px solid var(--light-border);
+    border-radius: 0.5rem;
+}
+.pagination .page-numbers {
+    outline: 1px solid var(--light-border);
+    padding: 3px 12px;
+    margin-left: 0.5rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.page-numbers:hover {
+    background-color: var(--link-color);
+}
+.page-numbers.current {
+    background-color: var(--link-hover);
+}
