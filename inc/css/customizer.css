@@ -1,0 +1,340 @@
+/* ========================================================
+   		CSS for Customizer Custom Controls
+   ========================================================
+   --Table of Contents:  
+   
+		1. Toggle Checkbox
+		2. Box Model- Margin Padding
+		3. Range slider
+
+   */
+	
+
+/* =========================================================
+   ---------  1  Toggle Switch
+   ========================================================= 
+*/
+.toggle-checkbox input[type=checkbox]
+   {
+	   border: none;
+	   outline: none;
+	   box-shadow: none;
+	   margin: 0;
+   }
+   .toggle-checkbox-input:focus
+   {
+	   outline: none;
+	   box-shadow: none;
+	   border-color: transparent;
+   }
+.toggle-checkbox
+{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 0.5rem;
+}
+.toggle-checkbox-label
+{
+	font-weight: bold;
+	font-size: 1rem;
+	opacity: 0.6;
+	padding: 0.3rem;
+	border-radius: 1rem;
+}
+.toggle-checkbox-input
+{
+	width: 54px !important;
+	height: 28px !important;
+	border-radius: 1rem !important;
+	position: relative;
+	opacity: 0.6;
+	margin: 0;
+	border: 3px solid #ddd !important;
+}
+.toggle-checkbox-input:checked
+{
+	margin: 0;
+	border: 3px solid #ddd !important;
+	box-shadow: none !important;
+	outline: none !important;
+	opacity: 1;
+	background-color: rgba(0, 0, 255, 0.7);
+}
+.toggle-checkbox-input:checked::before
+{
+	display: none !important;
+}
+
+.toggle-checkbox-input::after
+{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	width: 18px;
+	height: 17px;
+	background-color: #343434;
+	border-radius: 50%;
+	opacity: 0.5;
+}
+.toggle-checkbox-input:checked::after
+{
+	left: auto;
+	right: 3px;
+	opacity: 1;
+	background-color: #fff;
+
+}
+.toggle-checkbox-input:checked ~ .toggle-checkbox-label
+{
+	opacity: 1;
+}
+
+/*************** 12. Box Model ***************/
+
+.customize-control .box-model-wrapper{
+	max-width: 300px;
+	position: relative;
+	padding: 1rem 0;
+	border-bottom: 2px solid #dcdcdc;
+}
+
+.customize-control .box-model-label
+{
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-top: 1rem;
+	font-size: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.customize-control .box-model-margin,
+.customize-control .box-model-padding
+{
+	 display: grid;
+	 place-items: center;
+	 grid-template-columns: 1fr 1fr 1fr;
+	 grid-template-rows: 1fr 1fr 1fr;
+	 padding: 0.5rem 0.8rem;
+	 margin: 0.5rem 0;
+	 column-gap: 0.1rem;
+	 row-gap: 0.1rem;
+	 border: 1px solid #c8c8c8;
+}
+.fields-name
+{
+	padding: 1px;
+	margin: 0;
+	display: block; 
+	text-align: center; 
+	opacity: 0.7;
+}
+.margin-top,
+.padding-top
+{
+	grid-column: 2 / 3;
+}
+.margin-left,
+.padding-left
+{
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+}
+.margin-right,
+.padding-right
+{
+	grid-row: 2 / 3;
+	grid-column: 3 / 4;
+}
+.margin-bottom,
+.padding-bottom
+{
+	grid-row: 3 / 4;
+	grid-column: 2 / 3;
+}
+.customize-control input.box-model-field
+{
+    text-align: center;
+    font-size: 14px;
+    background-color: #fff;
+	outline: 1px solid #c8c8c8;
+    box-shadow: none;
+	border: none;
+	width: 60px;
+	height: 35px;
+}
+.customize-control input.box-model-field:focus{
+	border: none;
+	color: #000;
+}
+ 
+
+/* =========================================================
+   ---------  3  Range Slider
+   ========================================================= 
+*/
+
+.flex-range
+{
+	display: flex; 
+	justify-content: space-between;
+	align-items: center; 
+	gap: 1rem;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+}
+		   
+.flex-range .range-slider
+{
+	width: 70%; 
+	flex-grow: 1;
+}
+   
+.flex-range .number-input
+{
+	min-width: 3.2rem;
+	max-width: 4rem;
+	padding-inline: 5px 1px;
+}
+   
+.flex-range .dashicons-image-rotate
+{
+	opacity: 0.6;
+	cursor: pointer;
+	position: relative;
+}
+   
+.flex-range .dashicons-image-rotate:hover
+{
+	opacity: 1;
+}
+.flex-range .reset-info
+{
+	position: absolute;
+	display: inline-block;
+	min-width: 5rem;
+	font-size: 0.8rem;
+	top: 0.2rem;
+	left: -4rem;
+}
+
+/* =========================================================
+   ---------  4  Image Radio Buttons
+   ========================================================= 
+*/
+
+.flex-radio
+{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 0.5rem;
+}
+.layout-container
+{
+    display: flex;
+	position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+}
+.customize-control-radio .radio-hidden
+{
+    margin: 0;
+    display: none;
+}
+            
+.label-layout 
+{
+	display: inline-block;
+	margin: 4px;
+	padding: 4px 8px;
+	background-color: #fff;
+	opacity: 0.7;
+}
+            
+.flex-radio .icon-layout 
+{
+    opacity: 0.5;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    padding: 6px;
+}
+.radio-hidden:checked ~ .flex-radio .icon-layout
+{
+    opacity: 1;
+    outline: 1px solid #ddd;
+	background-color: #fff;
+}
+.radio-hidden:checked ~ .flex-radio .label-layout
+{
+    opacity: 1;
+    font-weight: bold;
+}
+.customize-control
+{
+    margin: 1rem 0;
+    border-top: 1px solid #ddd;
+}
+
+/* =========================================================
+   ---------  5  Number / Repeater
+   ========================================================= 
+*/
+
+.number-label-container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+}
+ .customize-control .custom-label
+{
+	font-size: 1rem;
+	flex-basis: 70%;
+	flex-grow: 1;
+	color: #000;
+}
+ .customize-control .custom-input-number
+{
+	max-width: 3.2rem;
+	padding: 0 4px;
+	margin-right: 2px !important;
+}
+.number-label-container .unit
+{
+	display: inline-block;
+	outline: 1px solid #ddd;
+	padding: 6px;
+	margin-left: 2px;
+}
+.repeater-header
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+}
+.repeater-header .repeater-label
+{
+	display: inline-block;
+	font-size: 1rem;
+	color: #000;
+	margin-right: 1rem;
+	width: 50%;
+
+}
+.repeater-header .dashicons
+{
+	display: inline-block;
+	color: #000;
+	margin-right: 2.4rem;
+}
