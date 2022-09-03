@@ -1,0 +1,71 @@
+
+<?php 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+get_header();
+?>
+
+        <!-- main artile n sidebar -->
+<section class="grid-container">
+    
+    <section class="main-content-grid-1">
+        <main id="main">
+                <header class="single-page-header">
+                        <h1 class="single-page-title">
+                                <?php single_cat_title('Category: ', true ) ?>
+                        </h1>
+                </header>
+           <?php
+                if(have_posts())
+                {
+                   $layout = get_theme_mod( 'archive-posts-layout', 'grid') ;
+                   if($layout === 'grid')
+                   { 
+                ?>
+                        <?php get_template_part( 'template-parts/content', 'blog' );
+                        ?>
+                <?php
+                }
+                else
+                {
+                ?>
+                    <section class="post-list">
+                        <?php
+                                get_template_part( 'template-parts/content', 'list' ); 
+                        ?>
+                        </section>
+            <?php 
+            }
+
+            } ?>  <!-- End If -->
+        
+        </main> <!--  End of Main     -->
+                <?php the_posts_pagination() ?>
+    </section> <!--   End of Main Content Grid Column 1 -->
+
+    <?php
+    $layout = get_theme_mod( 'archive-layout', 'sidebar-right' );
+  
+        if($layout === 'full-width')
+        { ?>
+            <style>
+                .grid-container
+                {
+                    grid-template-columns: 1fr !important;
+                }
+            </style>
+    </section> <!--   End of Main Grid  -->
+        <section> <!--  open section for grid child section 2 closed in footer  -->
+    <?php 
+        }
+        else
+        {
+            get_sidebar();
+        }
+
+
+
+get_footer();
+
+?>
